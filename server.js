@@ -9,7 +9,7 @@ const openai = new OpenAI({
 });
 
 const configuration = new Configuration({
-  apiKey: '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',  // Replace with your actual key
+  apiKey: ',  // Replace with your actual key
 });
 
 const scenarios = {
