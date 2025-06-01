@@ -2,16 +2,15 @@
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const { Configuration, OpenAIApi } = require('openai');
+const OpenAI = require("openai");
 
-const app = express();
-app.use(cors());
-app.use(bodyParser.json());
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY,
+});
 
 const configuration = new Configuration({
   apiKey: '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',  // Replace with your actual key
 });
-const openai = new OpenAIApi(configuration);
 
 const scenarios = {
   locked_account: "The customer is locked out of their Coinbase account and their password reset link expired. They're asking for help getting back in."
